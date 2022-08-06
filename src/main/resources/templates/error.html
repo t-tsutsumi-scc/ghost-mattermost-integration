@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Error | Ghost Mattermost integration</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0/css/bulma.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"/>
+    <link rel="icon" type="image/png" href="https://ghost-mattermost-integration-assets.netlify.app/favicon.png"/>
+  </head>
+  <body>
+    <section class="hero is-fullheight is-light is-bold">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <p class="title is-size-2 mb-0">
+            <span th:text="*{status != 999}? *{status} : '404'">404</span>
+            <span th:text="*{status != 999}? *{error} : 'Not Found'">Not Found</span>
+          </p>
+          <p th:if="${!#strings.isEmpty(message) &amp;&amp; message != 'No message available'}"
+              th:text="${message}" class="subtitle mt-2 mb-0">
+            Error ID: 55b1fb94-1c7c-4ac6-bf4e-07b97edd169a
+          </p>
+          <div class="control mt-5">
+            <a th:href="${@environment.getProperty('app.ghost.api.url')}" class="button">
+              <span class="icon">
+                <i class="fas fa-blog"></i>
+              </span>
+              <span>Return to blog</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

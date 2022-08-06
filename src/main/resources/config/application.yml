@@ -1,0 +1,104 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://localhost/mmintegration?characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true"
+    username: mmiuser
+    password: mmipassword
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connectionTimeout: 30000
+      idleTimeout: 60000
+      maxLifetime: 1800000
+      jdbc4ConnectionTest: true
+      minimumIdle: 0
+      maximumPoolSize: 10
+
+  datasourceGhost:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://localhost/ghost?characterEncoding=UTF-8"
+    username: root
+    password: example
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connectionTimeout: 30000
+      idleTimeout: 60000
+      maxLifetime: 1800000
+      jdbc4ConnectionTest: true
+      minimumIdle: 0
+      maximumPoolSize: 5
+
+  mvc:
+    logResolvedException: false
+
+  security:
+    oauth2:
+      client:
+        registration:
+          mattermost:
+            clientId: hdouudoy53g6bddt1sqcp7es4y
+            clientSecret: 17ojefizipn4pnbotk3rrir5ro
+            clientAuthenticationMethod: post
+            authorizationGrantType: authorization_code
+            redirectUri: "{baseUrl}/login/oauth2/code/{registrationId}"
+        provider:
+          mattermost:
+            authorizationUri: "http://localhost:8065/oauth/authorize"
+            tokenUri: "http://localhost:8065/oauth/access_token"
+            userInfoUri: "http://localhost:8065/api/v4/users/me"
+            userNameAttribute: username
+
+  thymeleaf:
+    cache: false
+
+management:
+  endpoints:
+    enabledByDefault: false
+    web:
+      basePath: /management
+  endpoint:
+    health:
+      enabled: true
+
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: FULL
+      ghost:
+        connectTimeout: 5000
+        readTimeout: 5000
+      mattermost:
+        connectTimeout: 5000
+        readTimeout: 5000
+
+app:
+  ghost:
+    api:
+      url: "http://localhost:2368"
+      key: 676acb97cbf37a78794375697b
+      retryPeriodMillis: 100
+      retryMaxPeriodMillis: 1000
+      retryMaxAttempts: 4
+    outgoingWebhook:
+      authorizedKey: r2vpgz6scd7kfv9rshs9w4s62x
+  mattermost:
+    api:
+      url: "http://localhost:8065"
+      accessToken: hqt7cbbfeib8ffguut8a6r93oe
+      retryPeriodMillis: 100
+      retryMaxPeriodMillis: 1000
+      retryMaxAttempts: 6
+
+---
+spring:
+  config:
+    activate:
+      on-profile: production
+  thymeleaf:
+    cache: true
+
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: NONE

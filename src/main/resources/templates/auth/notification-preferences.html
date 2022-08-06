@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Manage your notification preferences | Ghost Mattermost integration</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0/css/bulma.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4/animate.min.css"/>
+    <link rel="icon" type="image/png" href="https://ghost-mattermost-integration-assets.netlify.app/favicon.png"/>
+  </head>
+  <body>
+    <section class="hero is-dark">
+      <div class="hero-body">
+        <div class="container">
+          <p class="title">
+            Manage your notification preferences
+          </p>
+          <p class="subtitle">
+            Tell us what notification by Mattermost do you want to receive.
+          </p>
+        </div>
+          <a th:href="|/logout?returnUrl=${#uris.escapeQueryParam(returnUrl)}|"
+              class="button is-dark is-inverted is-size-7 is-inline-block"
+              style="position: absolute; top: 1.25em; right: 1.25em;">
+            <span class="icon">
+              <i class="fas fa-sign-out-alt"></i>
+            </span>
+            <span>Logout</span>
+          </a>
+      </div>
+    </section>
+
+    <div class="box is-radiusless mb-0 bx-0">
+      <p class="has-text-centered">
+        <i class="fas fa-sign-in-alt"></i>
+        &nbsp;You are currently logged in as Mattermost user
+        @<span th:text="${username}" class="has-text-weight-bold is-italic">user1</span>.
+      </p>
+    </div>
+
+    <section class="section pt-5">
+      <div class="container">
+        <form id="settings-form" method="post">
+          <p class="title is-3">Ghost blog subscription</p>
+          <div class="ml-5">
+            <div class="mt-4">
+              <p class="subtitle is-4 mb-2"><i class="fas fa-rss-square fa-fw"></i> ALL</p>
+              <div class="field ml-5">
+                <div class="control">
+                  <label class="checkbox">
+                    <input id="all" type="checkbox" name="all" value="true" th:field="*{form.all}">
+                    <span>Subscribe all posts</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <p class="subtitle is-4 mb-2"><i class="fas fa-tags fa-fw"></i> Tags</p>
+              <div class="field ml-5">
+                <div class="control">
+                  <label th:each="tag : ${tags}" class="checkbox mr-3 my-1">
+                    <input type="checkbox" name="tags" th:value="${tag.id()}" th:field="*{form.tags}">
+                    <span th:text="|${tag.name()} (${tag.count().isPresent() ? tag.count().get().posts() : 0})|">tag1 (2)</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <p class="subtitle is-4 mb-2"><i class="fas fa-at fa-fw"></i> Authors</p>
+              <div class="field ml-5">
+                <div class="control">
+                  <label th:each="author : ${authors}" class="checkbox mr-3 my-1">
+                    <input type="checkbox" name="authors" th:value="${author.id()}" th:field="*{form.authors}">
+                    <span th:text="|${author.name()} (${author.count().isPresent() ? author.count().get().posts() : 0})|">author1 (3)</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <div class="field is-grouped">
+              <div class="control">
+                <button type="submit" class="button is-dark">
+                  <span class="icon">
+                    <i class="fas fa-save"></i>
+                  </span>
+                  <span>Save changes</span>
+                </button>
+              </div>
+              <div class="control">
+                <a th:href="${returnUrl}" id="returnButton" class="button is-dark">
+                  <span class="icon">
+                    <i class="fas fa-blog"></i>
+                  </span>
+                  <span>Return to blog</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bulma-toast@2/dist/bulma-toast.min.js"></script>
+
+    <script>
+      $(function() {
+        $("#settings-form").attr("action", window.location.href);
+
+        $("input:checkbox").not($("#all")).prop("disabled", $("#all").is(":checked"));
+        $("#all").click(function() {
+          $("input:checkbox").not(this).prop("disabled", $(this).is(":checked"));
+        });
+      });
+    </script>
+    <script th:if="${updated == true}">
+      $(function() {
+        bulmaToast.toast({message: "Notification preferences saved successfully.", type: "is-info", duration: 6000});
+      });
+    </script>
+  </body>
+</html>

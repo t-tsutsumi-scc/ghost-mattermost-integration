@@ -1,0 +1,27 @@
+[versions]
+
+[libraries]
+spring-cloud-dependencies = "org.springframework.cloud:spring-cloud-dependencies:2021.0.3"
+
+liquibase-core = { module = "org.liquibase:liquibase-core" }
+commons-lang3 = { module = "org.apache.commons:commons-lang3" }
+spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+spring-boot-starter-jdbc = { module = "org.springframework.boot:spring-boot-starter-jdbc" }
+spring-boot-starter-mail = { module = "org.springframework.boot:spring-boot-starter-mail" }
+spring-boot-starter-oauth2-client = { module = "org.springframework.boot:spring-boot-starter-oauth2-client" }
+spring-boot-starter-thymeleaf = { module = "org.springframework.boot:spring-boot-starter-thymeleaf" }
+spring-boot-starter-validation = { module = "org.springframework.boot:spring-boot-starter-validation" }
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
+spring-cloud-starter-openfeign = { module = "org.springframework.cloud:spring-cloud-starter-openfeign" }
+spring-boot-devtools = { module = "org.springframework.boot:spring-boot-devtools" }
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+
+mysql-connector-java = "mysql:mysql-connector-java:8.0.30"
+immutables-value = "org.immutables:value:2.9.0"
+immutables-value-annotations = "org.immutables:value-annotations:2.9.0"
+
+[bundles]
+
+[plugins]
+spring-boot = "org.springframework.boot:2.7.2"
+spring-dependency-management = "io.spring.dependency-management:1.0.12.RELEASE"

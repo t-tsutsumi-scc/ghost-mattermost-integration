@@ -1,0 +1,47 @@
+version: "3.7"
+
+services:
+  app:
+    image: ghcr.io/t-tsutsumi-scc/ghost-mattermost-integration:main
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 8080:8080
+    environment:
+      TZ: UTC
+      #LOGGING_CONFIG: "/app/logback.xml"
+      SPRING_PROFILES_ACTIVE: production
+      SPRING_DATASOURCE_URL: "jdbc:mysql://localhost/app?characterEncoding=UTF-8"
+      SPRING_DATASOURCE_USERNAME: app_user
+      SPRING_DATASOURCE_PASSWORD: app_password
+      SPRING_DATASOURCEGHOST_URL: "jdbc:mysql://localhost:13306/ghost?characterEncoding=UTF-8"
+      SPRING_DATASOURCEGHOST_USERNAME: root
+      SPRING_DATASOURCEGHOST_PASSWORD: example
+      SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_MATTERMOST_CLIENTID: hdouudoy53g6bddt1sqcp7es4y
+      SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_MATTERMOST_CLIENTSECRET: 17ojefizipn4pnbotk3rrir5ro
+      SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_MATTERMOST_AUTHORIZATIONURI: "http://localhost:8065/oauth/authorize"
+      SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_MATTERMOST_TOKENURI: "http://localhost:8065/oauth/access_token"
+      SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_MATTERMOST_USERINFOURI: "http://localhost:8065/api/v4/users/me"
+      APP_GHOST_API_URL: "http://localhost:2368"
+      APP_GHOST_API_KEY: 676acb97cbf37a78794375697b
+      APP_GHOST_OUTGOINGWEBHOOK_AUTHORIZEDKEY: r2vpgz6scd7kfv9rshs9w4s62x
+      APP_MATTERMOST_API_URL: "http://localhost:8065"
+      APP_MATTERMOST_API_ACCESSTOKEN: hqt7cbbfeib8ffguut8a6r93oe
+    #volumes:
+    #  - /app/logback-production.xml:/app/logback.xml:ro
+
+  db:
+    image: mysql:8.0
+    restart: always
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      TZ: UTC
+      MYSQL_DATABASE: app
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: app_password
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+
+volumes:
+  db-data:

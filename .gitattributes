@@ -1,0 +1,256 @@
+* text=auto eol=lf
+
+*.3[gG][pP] binary
+*.3[gG][pP][pP] binary
+*.7[zZ] binary
+*.[aA] binary
+*.[aA][cC][cC][dD][bB] binary
+*.[aA][cC][cC][dD][tT] binary
+*.[aA][iI] binary
+*.[aA][sS] binary
+*.[aA][sS][fF] binary
+*.[aA][sS][xX] binary
+*.[aA][vV][iI] binary
+*.[bB][iI][nN] binary
+*.[bB][mM][pP] binary
+*.[cC][lL][aA][sS][sS] binary
+*.[dD][lL][lL] binary
+*.[eE][aA][rR] binary
+*.[eE][mM][fF] binary
+*.[eE][mM][zZ] binary
+*.[eE][oO][tT] binary
+*.[eE][pP][sS] binary
+*.[eE][xX][eE] binary
+*.[fF][lL][aA] binary
+*.[fF][lL][vV] binary
+*.[gG][iI][fF] binary
+*.[gG][iI][fF][vV] binary
+*.[gG][pP][gG] binary
+*.[gG][zZ] binary
+*.[iI][cC][nN][sS] binary
+*.[iI][cC][oO] binary
+*.[jJ][aA][rR] binary
+*.[jJ][kK][sS] binary
+*.[jJ][nN][gG] binary
+*.[jJ][pP]2 binary
+*.[jJ][pP][eE][gG] binary
+*.[jJ][pP][gG] binary
+*.[jJ][pP][xX] binary
+*.[jJ][xX][rR] binary
+*.[kK][aA][rR] binary
+*.[mM]4[aA] binary
+*.[mM]4[vV] binary
+*.[mM][dD][bB] binary
+*.[mM][iI][dD] binary
+*.[mM][iI][dD][iI] binary
+*.[mM][nN][gG] binary
+*.[mM][oO][vV] binary
+*.[mM][pP]3 binary
+*.[mM][pP]4 binary
+*.[mM][pP][eE][gG] binary
+*.[mM][pP][gG] binary
+*.[oO][gG][gG] binary
+*.[oO][gG][vV] binary
+*.[oO][tT][fF] binary
+*.[pP][dD][fF] binary
+*.[pP][nN][gG] binary
+*.[pP][pP][tT] binary
+*.[pP][pP][tT][xX] binary
+*.[pP][sS][bB] binary
+*.[pP][sS][dD] binary
+*.[pP][yY][cC] binary
+*.[rR][aA] binary
+*.[rR][aA][rR] binary
+*.[sS][oO] binary
+*.[sS][vV][gG][zZ] binary
+*.[sS][wW][cC] binary
+*.[sS][wW][fF] binary
+*.[tT][aA][rR] binary
+*.[tT][gG][zZ] binary
+*.[tT][iI][fF] binary
+*.[tT][iI][fF][fF] binary
+*.[tT][tT][fF] binary
+*.[vV][dD][wW] binary
+*.[vV][sS][dD] binary
+*.[vV][sS][dD][mM] binary
+*.[vV][sS][dD][xX] binary
+*.[vV][sS][sS] binary
+*.[vV][sS][sS][mM] binary
+*.[vV][sS][sS][xX] binary
+*.[vV][sS][tT] binary
+*.[vV][sS][tT][mM] binary
+*.[vV][sS][tT][xX] binary
+*.[wW][aA][rR] binary
+*.[wW][bB][mM][pP] binary
+*.[wW][eE][bB][mM] binary
+*.[wW][eE][bB][pP] binary
+*.[wW][mM][fF] binary
+*.[wW][oO][fF][fF] binary
+*.[wW][oO][fF][fF]2 binary
+*.[xX][lL][sS] binary
+*.[xX][lL][sS][bB] binary
+*.[xX][lL][sS][mM] binary
+*.[xX][lL][sS][xX] binary
+*.[xX][pP][sS] binary
+*.[zZ][iI][pP] binary
+
+*.[dD][oO][cC] -text diff=astextplain
+*.[dD][oO][cC][xX] -text diff=astextplain
+*.[dD][oO][tT] -text diff=astextplain
+*.[pP][aA][tT][cC][hH] -text
+*.[pP][dD][fF] -text diff=astextplain
+*.[rR][tT][fF] -text diff=astextplain
+
+*.[dD][rR][aA][wW][iI][oO] -diff
+
+*.[aA][dD][oO][cC] text eol=lf
+*.[bB][aA][sS][hH] text eol=lf
+*.[bB][aA][tT] text eol=crlf
+*.[bB][iI][bB][tT][eE][xX] text eol=lf diff=bibtex
+*.[cC][mM][dD] text eol=crlf
+*.[cC][nN][fF] text eol=lf
+*.[cC][oO][fF][fF][eE][eE] text eol=lf
+*.[cC][oO][nN][fF] text eol=lf
+*.[cC][oO][nN][fF][iI][gG] text eol=lf
+*.[cC][sS][sS] text eol=lf diff=css
+*.[cC][sS][vV] text eol=lf
+*.[dD][fF] text eol=lf
+*.[dD][oO][tT] text eol=lf
+*.[eE][jJ][sS] text eol=lf
+*.[eE][rR][bB] text eol=lf
+*.[fF][iI][sS][hH] text eol=lf
+*.[fF][tT][lL] text eol=lf
+*.[gG][rR][aA][dD][lL][eE] text eol=lf diff=java
+*.[gG][rR][oO][oO][vV][yY] text eol=lf diff=java
+*.[hH][aA][mM][lL] text eol=lf
+*.[hH][aA][nN][dD][lL][eE][bB][aA][rR][sS] text eol=lf
+*.[hH][bB][sS] text eol=lf
+*.[hH][bB][tT] text eol=lf
+*.[hH][tT][mM] text eol=lf diff=html
+*.[hH][tT][mM][lL] text eol=lf diff=html
+*.[iI][nN][cC] text eol=lf
+*.[iI][nN][iI] text eol=lf
+*.[iI][pP][yY][nN][bB] text eol=lf
+*.[jJ][aA][dD][eE] text eol=lf
+*.[jJ][aA][vV][aA] text eol=lf diff=java
+*.[jJ][sS] text eol=lf
+*.[jJ][sS][oO][nN] text eol=lf
+*.[jJ][sS][pP] text eol=lf
+*.[jJ][sS][pP][fF] text eol=lf
+*.[jJ][sS][pP][xX] text eol=lf
+*.[jJ][sS][xX] text eol=lf
+*.[kK][tT] text eol=lf diff=kotlin
+*.[kK][tT][sS] text eol=lf diff=kotlin
+*.[lL][aA][tT][tT][eE] text eol=lf
+*.[lL][eE][sS][sS] text eol=lf
+*.[lL][oO][cC][kK] text eol=lf -diff
+*.[lL][sS] text eol=lf
+*.[mM][aA][pP] text eol=lf -diff
+*.[mM][aA][rR][kK][dD][oO][wW][nN] text eol=lf diff=markdown
+*.[mM][dD] text eol=lf diff=markdown
+*.[mM][dD][oO][wW][nN] text eol=lf diff=markdown
+*.[mM][dD][tT][eE][xX][tT] text eol=lf
+*.[mM][dD][tT][xX][tT] text eol=lf
+*.[mM][dD][wW][nN] text eol=lf diff=markdown
+*.[mM][dD][xX] text eol=lf diff=markdown
+*.[mM][kK][dD] text eol=lf diff=markdown
+*.[mM][kK][dD][nN] text eol=lf diff=markdown
+*.[mM][uU][sS][tT][aA][cC][hH][eE] text eol=lf
+*.[nN][jJ][kK] text eol=lf
+*.[oO][dD] text eol=lf
+*.[oO][nN][lL][yY][dD][aA][tT][aA] text eol=lf
+*.[pP][hH][pP] text eol=lf diff=php
+*.[pP][hH][tT][mM][lL] text eol=lf
+*.[pP][lL] text eol=lf
+*.[pP][rR][oO][pP][eE][rR][tT][iI][eE][sS] text eol=lf
+*.[pP][sS]1 text eol=lf
+*.[pP][yY] text eol=lf diff=python
+*.[rR][bB] text eol=lf diff=ruby
+*.[sS][aA][sS][sS] text eol=lf
+*.[sS][cC][aA][lL][aA] text eol=lf diff=java
+*.[sS][cC][mM] text eol=lf
+*.[sS][cC][sS][sS] text eol=lf diff=css
+*.[sS][hH] text eol=lf
+*.[sS][qQ][lL] text eol=lf linguist-detectable=true linguist-language=sql
+*.[sS][tT][yY][lL] text eol=lf
+*.[sS][vV][eE][lL][tT][eE] text eol=lf
+*.[sS][vV][gG] text eol=lf
+*.[tT][aA][bB] text eol=lf
+*.[tT][aA][gG] text eol=lf
+*.[tT][aA][gG][xX] text eol=lf
+*.[tT][eE][xX] text eol=lf diff=tex
+*.[tT][eE][xX][tT][iI][lL][eE] text eol=lf
+*.[tT][lL][dD] text eol=lf
+*.[tT][mM][pP][lL] text eol=lf
+*.[tT][oO][mM][lL] text eol=lf
+*.[tT][pP][lL] text eol=lf
+*.[tT][sS] text eol=lf
+*.[tT][sS][vV] text eol=lf
+*.[tT][sS][xX] text eol=lf
+*.[tT][wW][iI][gG] text eol=lf
+*.[tT][xX][tT] text eol=lf
+*.[vV][uU][eE] text eol=lf
+*.[wW][eE][bB][mM][aA][nN][iI][fF][eE][sS][tT] text eol=lf
+*.[xX][hH][tT][mM][lL] text eol=lf diff=html
+*.[xX][mM][lL] text eol=lf
+*.[xX][sS][lL] text eol=lf
+*.[yY][aA][mM][lL] text eol=lf
+*.[yY][mM][lL] text eol=lf
+*.[zZ][sS][hH] text eol=lf
+
+.gitattributes text eol=lf export-ignore
+.gitignore text eol=lf export-ignore
+.gitkeep export-ignore
+
+package-lock.json text eol=lf -diff
+pnpm-lock.yaml text eol=lf -diff
+yarn.lock text eol=lf -diff
+
+.babelrc text eol=lf
+.bowerrc text eol=lf
+.browserslistrc text eol=lf
+.dockerignore text eol=lf
+.editorconfig text eol=lf
+.env text eol=lf
+.env.* text eol=lf
+.eslintignore text eol=lf
+.gitconfig text eol=lf
+.helmignore text eol=lf
+.htaccess text eol=lf
+.jshintignore text eol=lf
+.jshintrc text eol=lf
+.npmignore text eol=lf
+.nycrc text eol=lf
+.prettierrc text eol=lf
+AUTHORS text eol=lf
+AUTO_ASSIGN text eol=lf
+CHANGELOG text eol=lf
+CHANGES text eol=lf
+CODEOWNERS text eol=lf
+CONTRIBUTING text eol=lf
+COPYING text eol=lf
+COPYRIGHT text eol=lf
+Dockerfile text eol=lf
+INSTALL text eol=lf
+LICENSE text eol=lf
+Makefile text eol=lf
+NEWS text eol=lf
+Procfile text eol=lf
+README text eol=lf
+TODO text eol=lf
+browserslist text eol=lf
+gradlew text eol=lf
+mvnw text eol=lf
+post-applypatch text eol=lf
+post-checkout text eol=lf
+post-commit text eol=lf
+post-merge text eol=lf
+post-receive text eol=lf
+post-rewrite text eol=lf
+post-update text eol=lf
+pre-applypatch text eol=lf
+pre-commit text eol=lf
+pre-merge-commit text eol=lf
+pre-push text eol=lf
+pre-rebase text eol=lf
+pre-receive text eol=lf

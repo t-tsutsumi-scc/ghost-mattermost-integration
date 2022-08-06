@@ -1,0 +1,68 @@
+plugins {
+    id("java")
+    id("eclipse")
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+java {
+    sourceCompatibility = JavaVersion.toVersion("17")
+    targetCompatibility = JavaVersion.toVersion("17")
+}
+
+eclipse {
+    jdt.file {
+        def templateJdtCoreProps = new Properties()
+        def templateJdtCoreInputStream = new FileInputStream("${rootDir}/gradle/eclipse/org.eclipse.jdt.core.properties")
+        templateJdtCoreProps.load(templateJdtCoreInputStream)
+        templateJdtCoreInputStream.close()
+        withProperties { prefs ->
+            if (configurations.annotationProcessor.isEmpty()) {
+                templateJdtCoreProps.remove("org.eclipse.jdt.core.compiler.processAnnotations")
+            }
+            prefs.putAll(templateJdtCoreProps)
+        }
+
+        mkdir("${projectDir}/.settings")
+        file("${projectDir}/.settings/org.eclipse.core.resources.prefs").with { prefsFile ->
+            def templateResourcesProps = new Properties()
+            def templateResourcesInputStream = new FileInputStream("${rootDir}/gradle/eclipse/org.eclipse.core.resources.properties")
+            templateResourcesProps.load(templateResourcesInputStream)
+            templateResourcesInputStream.close()
+
+            def resourcesProps = new Properties()
+            if (prefsFile.exists()) {
+                def prefsInputStream = new FileInputStream(prefsFile)
+                resourcesProps.load(prefsInputStream)
+                prefsInputStream.close()
+            }
+            resourcesProps.putAll(templateResourcesProps)
+
+            def prefsOutputStream = new FileOutputStream(prefsFile)
+            resourcesProps.store(prefsOutputStream, "")
+            prefsOutputStream.close()
+        }
+
+        file("${projectDir}/.settings/org.eclipse.jdt.ui.prefs").with { prefsFile ->
+            def templateJdtUiProps = new Properties()
+            def templateJdtUiInputStream = new FileInputStream("${rootDir}/gradle/eclipse/org.eclipse.jdt.ui.properties")
+            templateJdtUiProps.load(templateJdtUiInputStream)
+            templateJdtUiInputStream.close()
+
+            def jdtUiProps = new Properties()
+            if (prefsFile.exists()) {
+                def prefsInputStream = new FileInputStream(prefsFile)
+                jdtUiProps.load(prefsInputStream)
+                prefsInputStream.close()
+            }
+            jdtUiProps.putAll(templateJdtUiProps)
+
+            def prefsOutputStream = new FileOutputStream(prefsFile)
+            jdtUiProps.store(prefsOutputStream, "")
+            prefsOutputStream.close()
+        }
+    }
+}

@@ -1,0 +1,28 @@
+plugins {
+    id("setup-java-environment")
+    alias(libs.plugins.spring.boot)
+    alias(libs.plugins.spring.dependency.management)
+}
+
+dependencies {
+    implementation(platform(libs.spring.cloud.dependencies))
+    implementation(libs.liquibase.core)
+    implementation(libs.commons.lang3)
+    implementation(libs.spring.boot.starter.actuator)
+    implementation(libs.spring.boot.starter.jdbc)
+    implementation(libs.spring.boot.starter.mail)
+    implementation(libs.spring.boot.starter.oauth2.client)
+    implementation(libs.spring.boot.starter.thymeleaf)
+    implementation(libs.spring.boot.starter.validation)
+    implementation(libs.spring.boot.starter.web)
+    implementation(libs.spring.cloud.starter.openfeign)
+    runtimeOnly(libs.mysql.connector.java)
+    annotationProcessor(libs.immutables.value)
+    compileOnly(libs.immutables.value.annotations)
+    developmentOnly(libs.spring.boot.devtools)
+    testImplementation(libs.spring.boot.starter.test)
+}
+
+tasks.named("test") {
+    useJUnitPlatform()
+}
