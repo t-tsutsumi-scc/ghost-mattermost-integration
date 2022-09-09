@@ -1,7 +1,7 @@
 [versions]
 
 [libraries]
-spring-cloud-dependencies = "org.springframework.cloud:spring-cloud-dependencies:2021.0.3"
+spring-cloud-dependencies = "org.springframework.cloud:spring-cloud-dependencies:2021.0.4"
 
 liquibase-core = { module = "org.liquibase:liquibase-core" }
 commons-lang3 = { module = "org.apache.commons:commons-lang3" }
