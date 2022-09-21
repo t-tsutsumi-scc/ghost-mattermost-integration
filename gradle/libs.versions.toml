@@ -24,4 +24,4 @@ immutables-value-annotations = "org.immutables:value-annotations:2.9.2"
 
 [plugins]
 spring-boot = "org.springframework.boot:2.7.3"
-spring-dependency-management = "io.spring.dependency-management:1.0.13.RELEASE"
+spring-dependency-management = "io.spring.dependency-management:1.0.14.RELEASE"
