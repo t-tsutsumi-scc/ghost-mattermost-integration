@@ -18,7 +18,7 @@ spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-star
 
 mysql-connector-java = "mysql:mysql-connector-java:8.0.33"
 immutables-value = "org.immutables:value:2.11.4"
-immutables-value-annotations = "org.immutables:value-annotations:2.11.3"
+immutables-value-annotations = "org.immutables:value-annotations:2.11.4"
 
 [bundles]
 
